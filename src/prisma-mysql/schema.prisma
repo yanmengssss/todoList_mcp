@@ -1,0 +1,50 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_DATABASE_URL")
+}
+
+model Tags {
+  id          String   @unique  
+  text        String
+  color       String?
+  userID      String
+}
+
+model Task {
+  id          String   @unique 
+  title       String
+  description String?
+  status      String
+  priority    Int
+  endAt       DateTime?
+  needTips    Boolean @default(false)
+  userID      String
+  favorite    Boolean @default(false)
+  tags        Json
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+model User {
+  id          Int      @id @default(autoincrement())
+  userID      String   @unique
+  email       String   @unique
+  tipsTime    Int @default(48)
+  tipsFrequency Int @default(6)
+  name        String?  @default("")
+  password    String?  @default("")
+  avatar      String?  @default("")
+  phone       String?  @default("")
+  githubID    String?  @default("")
+  googleID    String?  @default("")
+  tags        Json?  @default(dbgenerated("'[]'"))
+  tasks       Json?  @default(dbgenerated("'[]'"))
+  wxID        String?  @default("")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

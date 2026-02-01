@@ -1,0 +1,31 @@
+{
+  "name": "mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server with TypeScript",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "inspector": "npx @anthropic-ai/mcp-inspector node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "server"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@prisma/client": "6.19.2",
+    "prisma": "^6.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
