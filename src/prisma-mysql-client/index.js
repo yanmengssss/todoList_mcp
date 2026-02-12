@@ -210,7 +210,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "F:\\Graduation Project\\Server\\mcpServer\\src\\prisma-mysql-client",
+      "value": "F:\\Graduation Project\\todoList_mcp\\src\\prisma-mysql-client",
       "fromEnvVar": null
     },
     "config": {
@@ -228,11 +228,12 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "F:\\Graduation Project\\Server\\mcpServer\\src\\prisma-mysql\\schema.prisma",
+    "sourceFilePath": "F:\\Graduation Project\\todoList_mcp\\src\\prisma-mysql\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": null,
+    "schemaEnvPath": "../../.env"
   },
   "relativePath": "../prisma-mysql",
   "clientVersion": "6.19.2",
